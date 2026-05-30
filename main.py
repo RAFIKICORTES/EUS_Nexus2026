@@ -1236,7 +1236,7 @@ if __name__ == "__main__":
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=False)
 
 @app.get("/aviso-privacidad", response_class=HTMLResponse)
-async def aviso_privacidad():
+async def aviso_privacidad(request: Request):  # <--- Agrega (request: Request) aquí
     return f"""
     <html>
         <head>
